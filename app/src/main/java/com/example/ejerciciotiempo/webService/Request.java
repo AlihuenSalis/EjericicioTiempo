@@ -17,24 +17,14 @@ import com.google.gson.Gson;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Request extends AppCompatActivity {
+public class Request {
 
     private RequestQueue queue;
     private JSONObject json;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_request);
-
-        // ME FALTA ESTO EN EL METODO, POR ESO NO ANDA.
-//        queue = Volley.newRequestQueue(this);
-    }
-
-
-    public void obtenerDatos(String url) {
+    public void obtenerDatos(String url, AppCompatActivity activity) {
         System.out.println("llega ?");
-        queue = Volley.newRequestQueue(this);
+        queue = Volley.newRequestQueue(activity);
         System.out.println("URL EN METODO" );
 //        String url = "http://api.openweathermap.org/data/2.5/weather?q=London&appid=8e9da05bd1c51babfa6a7fd3a60dc632";
 //        String url1 = "https://samples.openweathermap.org/data/2.5/forecast?id=524901&appid=8e9da05bd1c51babfa6a7fd3a60dc632";
@@ -51,7 +41,7 @@ public class Request extends AppCompatActivity {
                             json = jsonObject1;
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Toast.makeText(Request.this, "ERROR",Toast.LENGTH_LONG).show();
+                            Toast.makeText(activity, "ERROR",Toast.LENGTH_LONG).show();
 
                         }
                         Gson gson = new Gson();
@@ -77,7 +67,7 @@ public class Request extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(Request.this, "el error es: "+error,Toast.LENGTH_LONG).show();
+                        Toast.makeText(activity, "el error es: "+error,Toast.LENGTH_LONG).show();
                         System.out.println("El error es: " + error);
 
                     }

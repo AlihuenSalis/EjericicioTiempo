@@ -60,7 +60,7 @@ public class PrincipalActivity extends AppCompatActivity implements View.OnClick
         if (datos != "") {
             String url = "http://api.openweathermap.org/data/2.5/weather?q="+datos+"&appid=8e9da05bd1c51babfa6a7fd3a60dc632";
             System.out.println("URL EN PRINCIPAL" + url);
-            req.obtenerDatos(url);
+            req.obtenerDatos(url, this);
 //            imprimirDatos();
         }
     }
