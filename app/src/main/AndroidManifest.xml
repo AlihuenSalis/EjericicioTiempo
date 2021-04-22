@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EjercicioTiempo"
         android:usesCleartextTraffic="true">
-        <activity android:name=".webService.Request"></activity>
+        <activity android:name=".webService.Request" />
         <activity android:name=".PrincipalActivity" />
         <activity
             android:name=".MainActivity"
