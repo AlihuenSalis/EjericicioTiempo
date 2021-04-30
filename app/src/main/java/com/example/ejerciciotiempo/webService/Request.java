@@ -1,6 +1,5 @@
 package com.example.ejerciciotiempo.webService;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.widget.Toast;
 
@@ -9,13 +8,12 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.ejerciciotiempo.Modelo.City;
-import com.google.gson.Gson;
+import com.example.ejerciciotiempo.CustomApplication;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Request {
+public class Request extends CustomApplication {
 
     private RequestQueue queue;
     private JSONObject json;
@@ -28,7 +26,7 @@ public class Request {
     }
 
 
-    public void obtenerDatos(String url, AppCompatActivity activity, final VolleyResponseListener listener) {
+    public void obtenerDatos(String url, CustomApplication activity, final VolleyResponseListener listener) {
 
         queue = Volley.newRequestQueue(activity);
 
@@ -45,8 +43,8 @@ public class Request {
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        Gson gson = new Gson();
-                        City datosCity = gson.fromJson(String.valueOf(json), City.class);
+//                        Gson gson = new Gson();
+//                        City datosCity = gson.fromJson(String.valueOf(json), City.class);
 
                         listener.onResponse(json);
 

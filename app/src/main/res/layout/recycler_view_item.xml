@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre: "
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_weight="1.4"/>
+        <TextView
+            android:id="@+id/txtNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre "
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_weight=".72"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.4"
+            android:text="Temperatura(ºC): "
+            android:textSize="17sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/txtTemp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Temperatura"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_weight=".72"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Humedad(%): "
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_weight="1.4"/>
+        <TextView
+            android:id="@+id/txtHume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Humedad "
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_weight=".72"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha Dato: "
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_weight="1.4"/>
+        <TextView
+            android:id="@+id/txtFecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha Dato "
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_weight=".72"/>
+    </LinearLayout>
+
+</LinearLayout>
