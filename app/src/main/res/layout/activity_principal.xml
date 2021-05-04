@@ -121,7 +121,7 @@
         android:layout_marginTop="9dp"
         android:layout_marginEnd="70dp"
         android:layout_marginRight="7dp"
-        android:onClick="NextPnt"
+        android:onClick="saveCityName"
         android:text="Guardar ciudad por defecto"
         tools:ignore="OnClick" />
 

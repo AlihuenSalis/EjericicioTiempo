@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -79,4 +81,5 @@ public class DatesActivity extends Activity {
         Intent intent = new Intent(DatesActivity.this, PrincipalActivity.class);
         startActivity(intent);
     }
+
 }

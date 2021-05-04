@@ -2,7 +2,9 @@ package com.example.ejerciciotiempo;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -32,6 +34,7 @@ public class PrincipalActivity extends Activity implements View.OnClickListener,
     private ImageButton btn;
     private Button saveBtn;
     private Button nextPtn;
+    private Button saveCityName;
     City datosCity;
     CustomApplication cnt;
 
@@ -43,11 +46,12 @@ public class PrincipalActivity extends Activity implements View.OnClickListener,
 
         cnt = ((CustomApplication) getApplicationContext());
         setUI();
-
+        cargarCityName();
         btn.setOnClickListener(this::onClick);
         btn.setOnLongClickListener(this);
         saveBtn.setOnClickListener(this::saveDates);
         nextPtn.setOnClickListener(this::nextPnt);
+        saveCityName.setOnClickListener(this::guardarPreferencia);
     }
 
 
@@ -58,6 +62,7 @@ public class PrincipalActivity extends Activity implements View.OnClickListener,
         btn = (ImageButton) findViewById(R.id.btnSearch);
         saveBtn = (Button) findViewById(R.id.saveButton);
         nextPtn = (Button) findViewById(R.id.btnSigPnt);
+        saveCityName = (Button) findViewById(R.id.btnSaveCityName);
     }
 
     public void onClick(View view){
@@ -140,6 +145,28 @@ public class PrincipalActivity extends Activity implements View.OnClickListener,
     public void nextPnt(View view){
         Intent intent = new Intent(PrincipalActivity.this, DatesActivity.class);
         startActivity(intent);
+    }
+
+    private void guardarPreferencia(View view){
+        SharedPreferences preferencia = getSharedPreferences
+                ("CityPreference", Context.MODE_PRIVATE);
+
+        String cityPreference = et.getText().toString();
+
+        SharedPreferences.Editor editor = preferencia.edit();
+        editor.putString("cityName", cityPreference);
+
+        et.setText(cityPreference);
+
+        editor.commit();
+    }
+
+    private void cargarCityName(){
+        SharedPreferences preferencia = getSharedPreferences
+                ("CityPreference", Context.MODE_PRIVATE);
+
+        String cityName = preferencia.getString("cityName", "");
+        et.setText(cityName);
     }
 
 
