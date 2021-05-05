@@ -13,11 +13,10 @@ import com.example.ejerciciotiempo.CustomApplication;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Request extends CustomApplication {
+public class Request {
 
     private RequestQueue queue;
     private JSONObject json;
-
 
     public interface VolleyResponseListener {
         void onError(String message);
@@ -26,9 +25,9 @@ public class Request extends CustomApplication {
     }
 
 
-    public void obtenerDatos(String url, CustomApplication activity, final VolleyResponseListener listener) {
+    public void obtenerDatos(String url, CustomApplication app, final VolleyResponseListener listener) {
 
-        queue = Volley.newRequestQueue(activity);
+        queue = Volley.newRequestQueue(app);
 
         JsonObjectRequest request = new JsonObjectRequest(
                 com.android.volley.Request.Method.GET,
@@ -54,7 +53,7 @@ public class Request extends CustomApplication {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         listener.onError(error.toString());
-                        Toast.makeText(activity, "Debe ingresar una Ciudad Válida",Toast.LENGTH_LONG).show();
+                        Toast.makeText(app, "Debe ingresar una Ciudad Válida",Toast.LENGTH_LONG).show();
 
                     }
                 }
